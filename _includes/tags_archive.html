@@ -1,0 +1,15 @@
+<ul>
+{% for tag in site.tags %}
+  {% if tag[0] == page.tag %}
+    {% assign post_list = tag[1] %}
+    {%- for post in post_list -%}
+      <li>
+        <span>{{ post.date | date: "%Y-%m-%d" }}</span> &raquo;
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </li>
+    {%- endfor -%}
+  {%- endif -%}
+{% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+<div class="tags-bar">
+{% assign tags = page.tags | sort %}
+{% for tag in tags %}
+  <span class="tag-wrapper">
+    <a class="tag-text" href="{{ site.baseurl }}/tags/{{ tag | slugify }}.html">{{ tag | replace:'-', ' ' }}</a>
+  </span>
+{% endfor %}
+</div>
+<script type="text/javascript">
+  setInvertedColor('tag-text');
+</script>

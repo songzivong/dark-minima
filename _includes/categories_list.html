@@ -1,0 +1,12 @@
+<ul class="category-list">
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+  <li class="site-category">
+    <h2>
+      <a class="site-category-text" href="{{ site.baseurl }}/categories/{{ category | first | slugify }}.html">
+        {{ category[0] }}
+      </a>
+    </h2>
+  </li>
+{% endfor %}
+</ul>
